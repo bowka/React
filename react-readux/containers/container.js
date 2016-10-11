@@ -7,8 +7,8 @@ const mapStateToProps = (appstate) => {
 	return {cities : TimeZoneSelector.getDisplayeCities(appstate)}}
 
 const mapDispatchToProps = dispatch => ({
-  onClickDel: () => dispatch({ type: ActionTypes.DEL }),
-  onClickCreate: () => dispatch({ type: ActionTypes.ADD })
+  onClickDel: (ix) => dispatch({ type: ActionTypes.DEL, data: ix}),
+  onClickCreate: (zone) => dispatch({ type: ActionTypes.ADD, data: zone})
 });
 
 export default connect(mapStateToProps,mapDispatchToProps)(App);
