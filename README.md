@@ -16,5 +16,7 @@ simple apps.
 Choose in dropdown menu time zone. By clicking is added new timeClock into page
 dyspayed as 
 13:35:12 == Prague
+
 12:35:12 == London
+
 14:35:12 == Cyprus
