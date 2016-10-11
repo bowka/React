@@ -15,8 +15,11 @@ simple apps.
 1.time zone selector
 Choose in dropdown menu time zone. By clicking is added new timeClock into page
 dyspayed as 
-13:35:12 == Prague
+ 13:35:12 == Prague
 
-12:35:12 == London
+ 12:35:12 == London
 
-14:35:12 == Cyprus
+ 14:35:12 == Cyprus
+
+2.Shopping Basket
+insert item into basket or delete item. incerement or decrement amount of items
