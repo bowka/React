@@ -6,6 +6,15 @@ simple apps.
 2.Calculator:  composed of two operands and one operator['+','-','*','/'] return result
 
 
-# React Redux
+# Redux
 
 1.calculator the same logic as previous, but made with redux
+
+# React Redux
+
+1.time zone selector
+Choose in dropdown menu time zone. By clicking is added new timeClock into page
+dyspayed as 
+13:35:12 == Prague
+12:35:12 == London
+14:35:12 == Cyprus
