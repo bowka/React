@@ -1,8 +1,8 @@
 import * as ActionTypes from '../constants/actionTypes';
-var moment = require('moment');
+import moment from 'moment';
 
 const initialState = { 
-  time : moment().format('LTS'),
+  time : 0,
   displayed_cities:[]
 }
 
@@ -11,7 +11,7 @@ export default (state = initialState, action ) => {
     case ActionTypes.DEL :
       return { 
         ...state,
-        displayed_cities:[...state].filter((x) =>  action.data !== x)
+        displayed_cities:[...state.displayed_cities].filter((x,ix) =>  action.data.ix != ix)
       };
 
     case ActionTypes.ADD :
@@ -22,9 +22,10 @@ export default (state = initialState, action ) => {
       };
 
     case ActionTypes.TIC:
+
       return { 
         ...state,
-        time : moment().format('LTS')
+        time : new moment()
       };
 
     default:
