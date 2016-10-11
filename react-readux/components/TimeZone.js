@@ -5,17 +5,16 @@ const TimeZones = moment.tz.names();
 const App = ({ cities, onClickDel, onClickCreate }) => (
 	<div>
 		<p> Time Zone </p>
-
-		{cities.map((time)=>
-			<p onClick={() => onClickDel({time})}>				
-				<br/>
-				{time}
+		
+		{cities.map(({city,time},ix)=> 
+			<p key={ix} onClick={() => onClickDel({ix})}>								
+				{city } === {time}
 			</p>
 			)}  
 
-		<select>	
+		<select id='DropDown' onChange={() => onClickCreate(document.getElementById('DropDown').value)}>	
 			{TimeZones.map((ix) =>
-				<option key={ix} onClick={() => onClickCreate({ix})}>{ix}</option>
+				<option key={ix} >{ix} </option>
 			)}
 		</select><br/><br/><br/>
 		<p> made by Katka </p>
