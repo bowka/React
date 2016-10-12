@@ -7,8 +7,8 @@ const Basket =({items}) =>(
 	</div>
 )
 
-Basket.PropTypes={
-	items: propTypes.Object.isRequired,
+Basket.propTypes={
+	items: propTypes.object.isRequired
 }
 
 export default Basket;
