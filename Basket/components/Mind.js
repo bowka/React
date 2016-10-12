@@ -8,7 +8,7 @@ const Mind =({onIncrement,onDecrement}) =>(
 		<button onClick={onDecrement(document.getElementById( 'new_item').value)}>-</button>
 	</div>
 	)
-Mind.PropTypes={
+Mind.propTypes={
 	inIncrement:propTypes.func.isRequired,
 	onDecrement:propTypes.func.isRequired
 
