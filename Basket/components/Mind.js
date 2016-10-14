@@ -1,17 +1,18 @@
-import React , { propTypes } from 'react';
+import React , { PropTypes } from 'react';
+// onChange
 
-
-const Mind =({onIncrement,onDecrement}) =>(
+const Mind =({onIncrement,onDecrement, onChange, value}) =>(
 	<div>
-		<textarea id='new_item'></textarea>
-		<button onClick={onIncrement(document.getElementById( 'new_item').value)}>+</button>
-		<button onClick={onDecrement(document.getElementById( 'new_item').value)}>-</button>
+		<textarea onChange={onChange} value={value}/>
+		<button onClick={()=>onIncrement(value)}>+</button>
+		<button onClick={()=>onDecrement(value)}>-</button>
 	</div>
 	)
 Mind.propTypes={
-	inIncrement:propTypes.func.isRequired,
-	onDecrement:propTypes.func.isRequired
-
+	value:PropTypes.string.isRequired,
+	onChange:PropTypes.func.isRequired,
+	onIncrement:PropTypes.func.isRequired,
+	onDecrement:PropTypes.func.isRequired
 }
 
 export default Mind;
