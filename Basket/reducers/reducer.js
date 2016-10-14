@@ -1,24 +1,53 @@
 import * as ActionTypes from '../constants/actionTypes';
-const initialState = {
-	butter: 3,
-	milk: 2
+const initialState={
+	content: {
+	  'milk':2,
+	  'bread':3
+	},
+	value: 'milk'
 }
 export default (state = initialState , action) => {
-	var item = action.data;
 	switch (action.type){
-		case ActionTypes.DEC:			
-			if (state.item > 1) {
-				return {...state, [item]: state.item - 1};
+		case ActionTypes.DEC:
+			if (state.value!==''){ 
+				var decVal=state.content[state.value]-1
+				var decItem= state.value;
+				var rest = state.content
+				if (state.value in state.content){
+					if (state.content[state.value]>1 ){ 
+						
+						return {...state,content:{...rest,[decItem]: decVal}}	
+					}
+					else {  
+						var result = {...state}
+						delete result.content[decItem]
+						return result;
+					}
+				}
+				return state
 			}
-			return state.filter((key) => key!=action.data);
-
+			else return state;
+	
 		case ActionTypes.INC:
-			if (state.item>0) {
-				return {...state, [item]: state.item + 1};
+			if (state.value!==''){ 
+				var IncVal=state.content[state.value]+1
+				var newItem= state.value;
+				var rest = state.content
+				if (newItem in state.content){
+					if (state.content[newItem]>0 ){ 
+						return {...state,content:{...rest,[newItem]: IncVal}}	
+					}
+				}
+				var result = {...state}
+				result.content[newItem]=1
+				return  result;
 			}
-			return {...state, [item]:1} ;
+			else return state;
+
+		case ActionTypes.SETVALUE:
+			return {...state, value:action.payload};
 
 		default :
 			return state;
 	}
-};
+};       
