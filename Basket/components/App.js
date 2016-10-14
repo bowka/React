@@ -1,19 +1,15 @@
-import React , { propTypes } from 'react';
+import React , { PropTypes } from 'react';
 import Basket from './Basket';
-import Mind from './Mind';
+import Mind from '../container/Mind';
 
-const App = ({items,inIncrement,onDecrement}) =>(
-	<div>Ahoj
-		<Basket items={items}/>
-		<Mind inIncrement={inIncrement} onDecrement={onDecrement}/>
+const App = ({items}) =>(
+	<div>
+		<Basket  items={items}/>
+		<Mind />
 	</div>
 )
 App.propTypes={
-	items: propTypes.object.isRequired,
-	inIncrement:propTypes.func.isRequired,
-	onDecrement:propTypes.func.isRequired
+	items: PropTypes.array.isRequired,
 }
-
-	
 
 export default App;
