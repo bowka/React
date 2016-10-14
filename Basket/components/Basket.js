@@ -1,14 +1,16 @@
-import React , { propTypes } from 'react';
+import React , { PropTypes } from 'react';
 
 
 const Basket =({items}) =>(
 	<div>
-		{items.forEach((i) => <p>{i} ---> {items[i]} times </p>)}
+		{items.map((i,ix) => 
+			(<p key={ix}>{i[0]} ---> {i[1]} times </p>))}
+		
 	</div>
 )
 
 Basket.propTypes={
-	items: propTypes.object.isRequired
+	items: PropTypes.array.isRequired,
 }
 
 export default Basket;
