@@ -1,2 +1,10 @@
-export const getItems = appState => (item) => item;
-export const getAmountOfItem = (appState) => appState.map(item => ({item:item,amount:appState[item]}));
+export const getContent = appState => appState.content;
+export const getItems = appState => {
+	var cont=getContent(appState);
+	var res=[];
+	for (var key in cont){
+		res.push([key,cont[key]])
+	}
+	return res
+};
+export const getValue = appState =>  appState.value;
